@@ -5,11 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Email sample previews</title>
   <style>
-    body { margin: 24px; font: 16px/1.5 system-ui, sans-serif; color: #243831; background: #fafbf9; }
-    h1 { margin-bottom: 8px; }
-    select { font: inherit; padding: 8px; }
+    :root { color-scheme: light dark; --canvas:#ffffff; --text:#1f2328; --muted:#59636e; --border:#d1d9e0; --link:#0969da; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-appearance="light"]) { --canvas:#0d1117; --text:#f0f6fc; --muted:#9198a1; --border:#3d444d; --link:#4493f8; }
+    }
+    :root[data-appearance="light"] { color-scheme: light; }
+    :root[data-appearance="dark"] { color-scheme: dark; --canvas:#0d1117; --text:#f0f6fc; --muted:#9198a1; --border:#3d444d; --link:#4493f8; }
+    body { margin: 24px; font: 16px/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; color: var(--text); background: var(--canvas); }
+    h1 { margin-bottom: 8px; font-size:32px; font-weight:600; }
+    h2 { font-size:20px; line-height:1.625; font-weight:600; }
+    p { color:var(--muted); }
+    a { color:var(--link); }
+    select { font: inherit; padding: 8px; border:1px solid var(--border); border-radius:6px; color:var(--text); background:var(--canvas); }
     .previews { display: flex; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
-    iframe { border: 1px solid #ccd5ce; height: 820px; background: white; }
+    iframe { border: 1px solid var(--border); height: 820px; background: transparent; }
     .desktop { width: 800px; }
     .mobile { width: 375px; }
   </style>
@@ -19,15 +28,29 @@
   <p>Browser layout checks. Actual Gmail and desktop email rendering must be checked by sending a test email.</p>
   <label for="sample">Sample </label>
   <select id="sample">
+    <option value="brief">Brief</option>
     <option value="welcome">Welcome</option>
     <option value="notification">Notification</option>
   </select>
-  <p><a id="html" href="../samples/welcome/email.html">Open HTML</a> · <a id="plain" href="../samples/welcome/email.txt">Plain text</a></p>
+  <label for="appearance">Appearance </label>
+  <select id="appearance">
+    <option value="auto">System</option>
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+  </select>
+  <p>Appearance previews the template's color-scheme styles; Gmail may transform colors differently.</p>
+  <p><a id="html" href="../samples/brief/email.html">Open HTML</a> · <a id="plain" href="../samples/brief/email.txt">Plain text</a></p>
   <div class="previews">
-    <section><h2>Desktop / 800px</h2><iframe class="desktop" title="Desktop email preview" src="../samples/welcome/email.html"></iframe></section>
-    <section><h2>Mobile / 375px</h2><iframe class="mobile" title="Mobile email preview" src="../samples/welcome/email.html"></iframe></section>
+    <section><h2>Desktop / 800px</h2><iframe class="desktop" title="Desktop email preview" src="../samples/brief/email.html"></iframe></section>
+    <section><h2>Mobile / 375px</h2><iframe class="mobile" title="Mobile email preview" src="../samples/brief/email.html"></iframe></section>
   </div>
   <script>
+    document.querySelector('#appearance').addEventListener('change', (event) => {
+      document.documentElement.dataset.appearance = event.target.value;
+      document.querySelectorAll('iframe').forEach(frame => {
+        frame.style.colorScheme = event.target.value === 'auto' ? 'light dark' : event.target.value;
+      });
+    });
     document.querySelector('#sample').addEventListener('change', (event) => {
       const base = '../samples/' + event.target.value;
       document.querySelectorAll('iframe').forEach(frame => frame.src = base + '/email.html');

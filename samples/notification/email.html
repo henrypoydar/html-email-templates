@@ -2,38 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Your weekly summary is ready</title>
   <style>
+    :root { color-scheme: light dark; supported-color-schemes: light dark; }
+    @media (prefers-color-scheme: dark) {
+      .email-text { color:#f0f6fc !important; }
+      .email-muted { color:#9198a1 !important; }
+      .email-accent { color:#4493f8 !important; }
+      .email-announcement { color:#f0f6fc !important; }
+      .email-divider { border-color:#3d444d !important; }
+      .email-announcement-border { border-color:#1f6feb !important; }
+      .email-button { background-color:#238636 !important; }
+      .email-button-link { background-color:#238636 !important; border-color:#238636 !important; color:#ffffff !important; }
+    }
     @media screen and (max-width: 620px) {
       .outer { padding: 16px 8px !important; }
-      .content { padding: 28px 24px !important; }
-      h1 { font-size: 28px !important; }
+      .content { padding: 0 16px !important; }
     }
   </style>
 </head>
-<body style="margin:0; padding:0; background-color:#f3f4f0; color:#243831; font-family:Arial, Helvetica, sans-serif; -webkit-text-size-adjust:100%;">
+<body class="email-text" style="margin:0; padding:0; font-size:16px; line-height:1.5; font-weight:400; color:#1f2328; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'; -webkit-text-size-adjust:100%;">
   <div style="display:none; max-height:0; overflow:hidden; opacity:0; mso-hide:all;">Catch up on the work that moved forward.</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f3f4f0">
-    <tr><td class="outer" align="center" style="padding:48px 16px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr><td class="outer" align="center" style="padding:32px 16px;">
       <!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;">
-        <tr><td style="padding:0 16px 24px; font-size:20px; font-weight:bold; color:#245c48;">example<span style="color:#637269;"> / </span>mail</td></tr>
-        <tr><td class="content" bgcolor="#ffffff" style="padding:40px; border-top:4px solid #245c48; border-radius:4px;">
-          <p style="margin:0 0 20px; color:#52675e; font-size:12px; font-weight:bold; letter-spacing:2px;">WORKSPACE UPDATE</p>
-          <h1 style="margin:0 0 24px; color:#243831; font-size:34px; line-height:1.2; font-weight:bold;">A little progress, delivered.</h1>
-          <p style="margin:0 0 12px; font-size:16px; line-height:1.6;">Hi Alex,</p>
-          <p style="margin:0 0 28px; font-size:16px; line-height:1.6;">Your team wrapped up three milestones this week. Your summary brings the highlights and next steps together so you can catch up in a few minutes.</p>
+        <tr><td class="email-text" style="padding:0 16px 24px; font-size:16px; line-height:1.5; font-weight:600; color:#1f2328;">example<span class="email-muted" style="color:#59636e;"> / </span>mail</td></tr>
+        <tr><td class="content" style="padding:0 16px;">
+          <p class="email-muted" style="margin:0 0 8px; color:#59636e; font-size:14px; line-height:1.5;">Workspace update</p>
+          <h1 class="email-text" style="margin:0 0 24px; color:#1f2328; font-size:32px; line-height:1.5; font-weight:600;">A little progress, delivered.</h1>
+          <p style="margin:0 0 12px; font-size:16px; line-height:1.5;">Hi Alex,</p>
+          <p style="margin:0 0 28px; font-size:16px; line-height:1.5;">Your team wrapped up three milestones this week. Your summary brings the highlights and next steps together so you can catch up in a few minutes.</p>
           <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-            <tr><td bgcolor="#245c48" style="border-radius:4px; mso-padding-alt:14px 24px;">
-              <a href="https://example.com/summary" style="display:inline-block; padding:14px 24px; border:1px solid #245c48; border-radius:4px; font-size:16px; line-height:20px; font-weight:bold; color:#ffffff; text-decoration:none;">Read your summary</a>
+            <tr><td class="email-button" bgcolor="#1f883d" style="border-radius:6px; mso-padding-alt:12px 20px;">
+              <a class="email-button-link" href="https://example.com/summary" style="display:inline-block; padding:12px 20px; border:1px solid #1f883d; border-radius:6px; font-size:16px; line-height:1.5; font-weight:600; color:#ffffff; text-decoration:none;">Read your summary</a>
             </td></tr>
           </table>
-          <p style="margin:28px 0 0; font-size:14px; line-height:1.6; color:#52675e;">See you there,<br>The Example team</p>
+          <p class="email-muted" style="margin:28px 0 0; font-size:14px; line-height:1.5; color:#59636e;">See you there,<br>The Example team</p>
         </td></tr>
-        <tr><td style="padding:24px 16px 0; font-size:12px; line-height:1.6; color:#52675e;">
+        <tr><td class="email-muted" style="padding:24px 16px 0; font-size:12px; line-height:1.625; color:#59636e;">
           <p style="margin:0 0 8px;">You received this email because weekly summaries are enabled for your Example account.</p>
-          <p style="margin:0;"><a href="https://example.com/settings/notifications" style="color:#245c48; text-decoration:underline;">Notification settings</a> &nbsp;·&nbsp; <a href="https://example.com/help" style="color:#245c48; text-decoration:underline;">Get help</a></p>
+          <p style="margin:0;"><a class="email-accent" href="https://example.com/settings/notifications" style="color:#0969da; text-decoration:underline;">Notification settings</a> &nbsp;·&nbsp; <a class="email-accent" href="https://example.com/help" style="color:#0969da; text-decoration:underline;">Get help</a></p>
         </td></tr>
       </table>
       <!--[if mso]></td></tr></table><![endif]-->

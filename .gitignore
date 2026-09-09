@@ -1,6 +1,35 @@
+# macOS metadata
 .DS_Store
+.AppleDouble
+._*
+
+# Local credentials and configuration (keep sanitized examples)
 .env
 .env.*
 !.env.example
+.envrc
+!.envrc.example
+
+# Python caches and local environments
 __pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Generated email exports and local logs
 output/
+*.eml
+*.log
+
+# Editor temporary files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

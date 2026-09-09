@@ -1,0 +1,48 @@
+WEEKLY BRIEF · SEPTEMBER 9, 2026
+A simpler first week.
+
+ANNOUNCEMENT
+The pilot walkthrough moves to Thursday at 2 p.m. ET.
+See the agenda and joining details: https://example.com/pilot/walkthrough
+
+TL;DR
+The new onboarding flow is ready for a small pilot. We need a decision on the
+invitation copy and the support owner by Friday. The broader rollout stays on
+hold until we review what the pilot teaches us.
+
+WHAT CHANGED
+New teammates now land on a short setup checklist with a clear first action.
+The aim is less guessing, faster progress, especially for people joining an
+existing workspace.
+
+The design notes explain the choices behind the flow:
+https://example.com/pilot/design-notes
+
+Three changes are ready to try:
+- A shorter welcome: one next step, with supporting detail available when needed.
+- Clearer invitations: the sender and workspace appear together so the invitation
+  has context.
+- A useful finish: a link to the team's current work, instead of another setup
+  screen.
+
+WHAT NEEDS A DECISION
+Two items need an owner before the pilot starts. Please add your input to the
+decision log by Friday, September 11:
+https://example.com/pilot/decision-log
+
+1. Choose the invitation copy. Maya recommends the shorter version; review both
+   options and flag any missing context.
+2. Confirm the support owner. Jordan can cover the first day, but we still need
+   coverage for the rest of the week.
+
+WHAT HAPPENS NEXT
+Once those decisions are settled, we will invite five teams and review their
+feedback after one week. This is a learning milestone, not a public launch date.
+
+The next brief will report where people got stuck, what we changed, and whether
+the flow is ready for more teams. Follow the pilot plan for scope and timing:
+https://example.com/pilot/plan
+
+You received this email because you subscribe to the Example weekly brief.
+Notification settings: https://example.com/settings/notifications
+Get help: https://example.com/help
