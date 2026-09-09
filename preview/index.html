@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Email sample previews</title>
+  <style>
+    body { margin: 24px; font: 16px/1.5 system-ui, sans-serif; color: #243831; background: #fafbf9; }
+    h1 { margin-bottom: 8px; }
+    select { font: inherit; padding: 8px; }
+    .previews { display: flex; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
+    iframe { border: 1px solid #ccd5ce; height: 820px; background: white; }
+    .desktop { width: 800px; }
+    .mobile { width: 375px; }
+  </style>
+</head>
+<body>
+  <h1>Email sample previews</h1>
+  <p>Browser layout checks. Actual Gmail and desktop email rendering must be checked by sending a test email.</p>
+  <label for="sample">Sample </label>
+  <select id="sample">
+    <option value="welcome">Welcome</option>
+    <option value="notification">Notification</option>
+  </select>
+  <p><a id="html" href="../samples/welcome/email.html">Open HTML</a> · <a id="plain" href="../samples/welcome/email.txt">Plain text</a></p>
+  <div class="previews">
+    <section><h2>Desktop / 800px</h2><iframe class="desktop" title="Desktop email preview" src="../samples/welcome/email.html"></iframe></section>
+    <section><h2>Mobile / 375px</h2><iframe class="mobile" title="Mobile email preview" src="../samples/welcome/email.html"></iframe></section>
+  </div>
+  <script>
+    document.querySelector('#sample').addEventListener('change', (event) => {
+      const base = '../samples/' + event.target.value;
+      document.querySelectorAll('iframe').forEach(frame => frame.src = base + '/email.html');
+      document.querySelector('#html').href = base + '/email.html';
+      document.querySelector('#plain').href = base + '/email.txt';
+    });
+  </script>
+</body>
+</html>
